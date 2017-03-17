@@ -7,18 +7,37 @@ import java.io.Serializable;
  */
 
 public class Confirmacion implements Serializable {
-    public String msg;
+    public String name;
+    public String password;
+    public boolean confirmado;
 
-    public Confirmacion(String msg) {
-
-        this.msg = msg;
+    public Confirmacion(String name, String password, boolean confirmado) {
+        this.name = name;
+        this.password = password;
+        this.confirmado = confirmado;
     }
 
-    public String getContenido() {
-        return msg;
+    public String getName() {
+        return name;
     }
 
-    public void setMensaje(String msg) {
-        this.msg = msg;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isConfirmado() {
+        return confirmado;
+    }
+
+    public void setConfirmado(boolean confirmado) {
+        this.confirmado = confirmado;
     }
 }

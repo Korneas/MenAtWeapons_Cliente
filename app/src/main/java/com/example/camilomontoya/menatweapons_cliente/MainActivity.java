@@ -32,14 +32,17 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
         GROUP_ADDRESS = Comunicacion.getInstance().getGROUP_ADDRESS();
 
+        user = (EditText) findViewById(R.id.user);
+        pass = (EditText) findViewById(R.id.password);
+
         login = (ImageButton) findViewById(R.id.iniciar_s);
         signin = (ImageButton) findViewById(R.id.registrar);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registro = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(registro);
+                aviso("Iniciame papu :'v");
+                Comunicacion.getInstance().enviar(new Confirmacion(user.getText().toString(), pass.getText().toString(), false), GROUP_ADDRESS);
             }
         });
 
@@ -62,7 +65,13 @@ public class MainActivity extends AppCompatActivity implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         if (arg instanceof Confirmacion) {
-
+            Confirmacion yas = (Confirmacion) arg;
+            if (yas.isConfirmado()) {
+                Intent homie = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(homie);
+            } else {
+                //aviso("No te has registrado");
+            }
         }
     }
 }

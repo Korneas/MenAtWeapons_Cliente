@@ -47,7 +47,8 @@
         android:theme="@style/WeaponTheme"
         android:backgroundTint="@color/colorWeaponPrimary"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        android:textColorHighlight="@color/colorWeaponAccent" />
+        android:textColorHighlight="@color/colorWeaponAccent"
+        android:textColorHint="#bcbcbc"/>
 
 
     <EditText
@@ -64,7 +65,8 @@
         android:backgroundTint="@color/colorWeaponPrimary"
         android:layout_below="@+id/user"
         android:layout_alignStart="@+id/user"
-        android:textColorHighlight="@color/colorWeaponAccent" />
+        android:textColorHighlight="@color/colorWeaponAccent"
+        android:textColorHint="#bcbcbc"/>
 
     <ImageButton
         android:layout_width="wrap_content"
